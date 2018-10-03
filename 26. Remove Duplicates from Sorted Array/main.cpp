@@ -1,10 +1,7 @@
-class Solution {
-    public:
-    int removeDuplicates(int A[], int n) {
-        if(n < 2) return n;
+int removeDuplicates(int* nums, int numsSize) {
+    if(numsSize < 2) return numsSize;
         int id = 1;
-        for(int i = 1; i < n; ++i) 
-            if(A[i] != A[i-1]) A[id++] = A[i];
+        for(int i = 1; i < numsSize; ++i) 
+            if(nums[i] != nums[i-1]) nums[id++] = nums[i];
         return id;
-    }
-};
+}
