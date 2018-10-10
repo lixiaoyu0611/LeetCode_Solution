@@ -4,6 +4,7 @@
 using namespace std;
 int a[30];
 int n;
+long long count = 0;
 
 int tryplace(int x, int y){
     int j = 1;
@@ -21,9 +22,10 @@ void print(){
     }
     cout<<endl;
 }
-void printGraph()			//图形化打印布局
+
+void printGraph()
 {
-	system("color F0");  	//DOs命令改变背景色和前景色，颜色为16进制数0~F
+	system("color F0");
 	for(int i=1;i<=n;++i)
 	{
 		for(int j=1;j<=n;++j)
@@ -41,8 +43,9 @@ void place(int x){
     int y;
 	if(x > n)
 	{
-		print();
-		printGraph();
+	    count++;
+		//print();
+		//printGraph();
 	}
 	else
 	{
@@ -58,5 +61,6 @@ void place(int x){
 int main(){
     cin>>n;
     place(1);
+    cout<<count<<endl;
     return 0;
 }
